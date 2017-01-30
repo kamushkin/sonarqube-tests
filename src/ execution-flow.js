@@ -2,13 +2,18 @@
 
 function skipIfBranch(param){
 
+	function isArray(value){
+		return Array.isArray(value)
+	}
+
+
 	var result;
 
 	if (typeof param == 'string'){
 		result = [param];
 	}
 
-	if (!Array.isArray(result)){
+	if (!isArray(result)){
 		result = [];
 	}
 
