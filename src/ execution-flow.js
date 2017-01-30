@@ -22,8 +22,10 @@ function skipIfBranch(param){
 }
 
 
-
 function customAssert(param){
+
+	// https://sonarqube.com/issues#issues=AVjdI39UbWj_GMDPVsA8
+	// https://sonarqube.com/issues#issues=AVTMqSgftu4QdCAX4XJm
 
 	function assertNotNull(value){
 		if (value === null || value === undefined){
