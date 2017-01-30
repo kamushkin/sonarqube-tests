@@ -15,88 +15,7 @@ function notBoolean(promise, doSomething){
 }
 
 
-
-function Identity( v ) {
-	return v;
-}
-
-function Thrower( ex ) {
-	throw ex;
-}
-
-
-function abc(deferred, handler, special, that, args, maxDepth, resolve, jQuery){
-
-	var returned, then;
-
-	returned = handler.apply( that, args );
-
-	if ( returned === deferred.promise() ) {
-		throw new TypeError( "Thenable self-resolution" );
-	}
-
-	then = returned &&
-		( typeof returned === "object" ||
-			typeof returned === "function" ) &&
-		returned.then;
-
-	// Handle a returned thenable
-	if ( jQuery.isFunction( then ) ) {
-
-		// Special processors (notify) just wait for resolution
-		if ( special ) {
-			then.call(
-				returned,
-				resolve( maxDepth, deferred, Identity, special ),
-				resolve( maxDepth, deferred, Thrower, special )
-			);
-		}
-
-	}
-}
-
-
-function abc2(deferred, handler, special, that, args, maxDepth, resolve){
-
-	var returned, then;
-
-	returned = handler.apply( that, args );
-
-	then = returned &&
-		( typeof returned === "object" ||
-			typeof returned === "function" ) &&
-		returned.then;
-
-	// Special processors (notify) just wait for resolution
-	if ( special ) {
-		then.call(
-			returned,
-			resolve( maxDepth, deferred, Identity, special ),
-			resolve( maxDepth, deferred, Thrower, special )
-		);
-	}
-
-}
-
-
-function abc3(returned, special){
-
-	var then;
-
-	then = returned &&
-		( typeof returned === "object" ||
-			typeof returned === "function" ) &&
-		returned.then;
-
-	// Special processors (notify) just wait for resolution
-	if ( special ) {
-		then.call(returned);
-	}
-
-}
-
-
-function abc4(returned){
+function notBoolean2(returned){
 
 	var then = returned &&
 		( typeof returned === "object" ||
@@ -104,4 +23,28 @@ function abc4(returned){
 		returned.then;
 
 	then.call(returned);
+}
+
+
+function notBoolean3(returned){
+
+	var then = returned && typeof returned === "object" && returned.then;
+
+	then.call(returned);
+}
+
+
+function notBoolean4(returned){
+
+	var then = returned && returned.then;
+
+	then.call(returned);
+}
+
+
+function notBoolean5(promise){
+
+	var then = promise && promise.then;
+
+	then.call(promise);
 }
