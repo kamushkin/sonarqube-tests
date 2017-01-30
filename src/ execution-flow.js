@@ -26,8 +26,8 @@ function skipIfBranch(param){
 function customAssert(param){
 
 	function assertNotNull(value){
-		if (value === null){
-			throw new Error('value is null');
+		if (value === null || value === undefined){
+			throw new Error('value is null/undefined');
 		}
 	}
 
