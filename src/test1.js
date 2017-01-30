@@ -17,5 +17,6 @@ function testIfBranch(param){
 		results = [];
 	}
 
+	// check
 	return results.length;
 }
