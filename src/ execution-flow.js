@@ -2,6 +2,9 @@
 
 function skipIfBranch(param){
 
+	// jQuery
+	//   https://sonarqube.com/issues#issues=AVl2B2tcoyrXF8JkMTQy
+
 	function isArray(value){
 		return Array.isArray(value)
 	}
@@ -24,8 +27,9 @@ function skipIfBranch(param){
 
 function customAssert(param){
 
-	// https://sonarqube.com/issues#issues=AVjdI39UbWj_GMDPVsA8
-	// https://sonarqube.com/issues#issues=AVTMqSgftu4QdCAX4XJm
+	// react
+	//   https://sonarqube.com/issues#issues=AVjdI39UbWj_GMDPVsA8
+	//   https://sonarqube.com/issues#issues=AVTMqSgftu4QdCAX4XJm
 
 	function assertNotNull(value){
 		if (value === null || value === undefined){
