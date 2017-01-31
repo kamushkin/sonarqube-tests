@@ -49,3 +49,22 @@ function customAssert(param){
 	// result cannot be null/undefined here
 	return result.length;
 }
+
+
+
+function testWhile(tag, tmp){
+
+	// https://sonarqube.com/issues#issues=AVnJW7_5Ybr9ugKerrQd
+
+	var elem = 0;
+
+	if (tag === "table"){
+		elem = tmp;
+	}
+
+	var j = elem && elem.childNodes.length;
+
+	while ( j-- ) {
+		elem.removeChild(elem.firstChild);
+	}
+}
