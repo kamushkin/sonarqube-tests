@@ -89,3 +89,17 @@ function doubleCondition(param, doSomething){
 
 	return a;
 }
+
+
+function unknownProperty(obj, doSomething){
+
+	// https://sonarqube.com/issues#issues=AVWCHxapSARHJEIG7AEb
+
+	if (obj === null){
+		doSomething();
+	}
+
+	if (this.child === obj){
+		this.child = obj.child;
+	}
+}
