@@ -68,3 +68,24 @@ function testWhile(tag, tmp){
 		elem.removeChild(elem.firstChild);
 	}
 }
+
+
+
+function doubleCondition(param, doSomething){
+
+	// https://sonarqube.com/issues#issues=AVn7ordhaRqHwG08CTVt
+
+	var a;
+
+	if (param){
+		a = [1];
+	}
+
+	doSomething(a);
+
+	if(param){
+		a.push(2);
+	}
+
+	return a;
+}
