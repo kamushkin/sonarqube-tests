@@ -77,13 +77,13 @@ function doubleCondition(param, doSomething){
 
 	var a;
 
-	if (param){
+	if (param.value){
 		a = [1];
 	}
 
 	doSomething(param);
 
-	if(param){
+	if(param.value){
 		a.push(2);
 	}
 
