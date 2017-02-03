@@ -81,7 +81,7 @@ function doubleCondition(param, doSomething){
 		a = [1];
 	}
 
-	doSomething(a);
+	doSomething(param);
 
 	if(param){
 		a.push(2);
