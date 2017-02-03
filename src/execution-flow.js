@@ -103,3 +103,16 @@ function unknownProperty(obj, doSomething){
 		this.child = obj.child;
 	}
 }
+
+
+function unknownValue(obj, value, doSomething){
+
+	if (obj === null){
+		doSomething();
+	}
+
+	// knowing that value cannot be null
+	if (obj === value){
+		obj.value = value;
+	}
+}
