@@ -91,6 +91,32 @@ function doubleCondition(param, doSomething){
 }
 
 
+
+function doubleCondition2(condition1, condition2, Type){
+
+	// https://sonarqube.com/issues#issues=AVoYGn6rPy26VwNFV1fv
+
+	var obj;
+
+	if (condition1){
+		if (condition2) {
+			obj = new Type(1);
+		}
+		else {
+			obj = new Type(2);
+		}
+	}
+
+	// ...
+
+	if (condition1){
+		obj.add(3);
+	}
+
+	return obj;
+}
+
+
 function unknownProperty(obj, doSomething){
 
 	// https://sonarqube.com/issues#issues=AVWCHxapSARHJEIG7AEb
@@ -116,3 +142,5 @@ function unknownValue(obj, value, doSomething){
 		obj.value = value;
 	}
 }
+
+
