@@ -92,28 +92,30 @@ function doubleCondition(param, doSomething){
 
 
 
-function doubleCondition2(condition1, condition2, Type){
+function doubleCondition2(){
 
 	// https://sonarqube.com/issues#issues=AVoYGn6rPy26VwNFV1fv
 
-	var obj;
+	var condition = true;
 
-	if (condition1){
-		if (condition2) {
-			obj = new Type(1);
-		}
-		else {
-			obj = new Type(2);
-		}
+	function doSomething(){
+		// ...
 	}
 
-	// ...
+	function inner(){
 
-	if (condition1){
-		obj.add(3);
+		var a;
+
+		if (condition){
+			a = [1];
+		}
+
+		doSomething();
+
+		if (condition){
+			a.push(2);
+		}
 	}
-
-	return obj;
 }
 
 
