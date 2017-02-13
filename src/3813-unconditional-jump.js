@@ -8,8 +8,9 @@ function continueWithReturn(test){
 
 		var x = ++this.count;
 
-		if (!test(x))
+		if (!test(x)) {
 			continue;
+		}
 
  		return x;
  	}
