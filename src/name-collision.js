@@ -13,7 +13,7 @@ function undeclaredLoopVar(){
 	}
 
 	for(i=0; i<42; i++){
-		doSomethng(i);
+		doSomething(i);
 	}
 
 }
