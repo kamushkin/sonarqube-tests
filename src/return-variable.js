@@ -8,7 +8,7 @@ function returnedVariable(){
 			// init
 		},
 
-		doSomething: function(p){
+		doSomething: function(){
 
 			service.init();
 
